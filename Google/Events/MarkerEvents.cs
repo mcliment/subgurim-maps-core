@@ -1,115 +1,123 @@
-﻿namespace Subgurim.Maps.Google.Events
+﻿using System;
+using Subgurim.Maps.Helpers;
+
+namespace Subgurim.Maps.Google.Events
 {
-    internal enum MarkerEvents
+    [Serializable]
+    internal sealed class MarkerEvents : StringEnum
     {
         /// <summary>
-        /// This event is fired when the marker's animation property changes.
+        ///   This event is fired when the marker's animation property changes.
         /// </summary>
-        Animation_Changed,
+        public static readonly MarkerEvents AnimationChanged = new MarkerEvents(1, "animation_changed");
 
         /// <summary>
-        /// This event is fired when the marker icon was clicked.
+        ///   This event is fired when the marker icon was clicked.
         /// </summary>
-        Click,
+        public static readonly MarkerEvents Click = new MarkerEvents(2, "click");
 
         /// <summary>
-        /// This event is fired when the marker's clickable property changes.
+        ///   This event is fired when the marker's clickable property changes.
         /// </summary>
-        Clickable_Changed,
+        public static readonly MarkerEvents ClickableChanged = new MarkerEvents(3, "clickable_changed");
 
         /// <summary>
-        /// This event is fired when the marker's cursor property changes.
+        ///   This event is fired when the marker's cursor property changes.
         /// </summary>
-        Cursor_Changed,
+        public static readonly MarkerEvents CursorChanged = new MarkerEvents(4, "cursor_changed");
 
         /// <summary>
-        /// This event is fired when the marker icon was double clicked.
+        ///   This event is fired when the marker icon was double clicked.
         /// </summary>
-        DblClick,
+        public static readonly MarkerEvents DblClick = new MarkerEvents(5, "dblclick");
 
         /// <summary>
-        /// This event is repeatedly fired while the user drags the marker.
+        ///   This event is repeatedly fired while the user drags the marker.
         /// </summary>
-        Drag,
+        public static readonly MarkerEvents Drag = new MarkerEvents(6, "drag");
 
         /// <summary>
-        /// This event is fired when the user stops dragging the marker.
+        ///   This event is fired when the user stops dragging the marker.
         /// </summary>
-        Dragend,
+        public static readonly MarkerEvents Dragend = new MarkerEvents(7, "dragend");
 
         /// <summary>
-        /// This event is fired when the marker's draggable property changes.
+        ///   This event is fired when the marker's draggable property changes.
         /// </summary>
-        Draggable_Changed,
+        public static readonly MarkerEvents DraggableChanged = new MarkerEvents(8, "draggable_changed");
 
         /// <summary>
-        /// This event is fired when the user starts dragging the marker.
+        ///   This event is fired when the user starts dragging the marker.
         /// </summary>
-        DragStart,
+        public static readonly MarkerEvents DragStart = new MarkerEvents(9, "dragstart");
 
         /// <summary>
-        /// This event is fired when the marker's flat property changes.
+        ///   This event is fired when the marker's flat property changes.
         /// </summary>
-        Flat_Changed,
+        public static readonly MarkerEvents FlatChanged = new MarkerEvents(10, "flat_changed");
 
         /// <summary>
-        /// This event is fired when the marker icon property changes.
+        ///   This event is fired when the marker icon property changes.
         /// </summary>
-        Icon_Changed,
+        public static readonly MarkerEvents IconChanged = new MarkerEvents(11, "icon_changed");
 
         /// <summary>
-        /// This event is fired for a mousedown on the marker.
+        ///   This event is fired for a mousedown on the marker.
         /// </summary>
-        MouseDown,
+        public static readonly MarkerEvents MouseDown = new MarkerEvents(12, "mousedown");
 
         /// <summary>
-        /// This event is fired when the mouse leaves the area of the marker icon.
+        ///   This event is fired when the mouse leaves the area of the marker icon.
         /// </summary>
-        MouseOut,
+        public static readonly MarkerEvents MouseOut = new MarkerEvents(13, "mouseout");
 
         /// <summary>
-        /// This event is fired when the mouse enters the area of the marker icon.
+        ///   This event is fired when the mouse enters the area of the marker icon.
         /// </summary>
-        MouseOver,
+        public static readonly MarkerEvents MouseOver = new MarkerEvents(14, "mouseover");
 
         /// <summary>
-        /// This event is fired for a mouseup on the marker.
+        ///   This event is fired for a mouseup on the marker.
         /// </summary>
-        MouseUp,
+        public static readonly MarkerEvents MouseUp = new MarkerEvents(15, "mouseup");
 
         /// <summary>
-        /// This event is fired when the marker position property changes.
+        ///   This event is fired when the marker position property changes.
         /// </summary>
-        Position_Changed,
+        public static readonly MarkerEvents PositionChanged = new MarkerEvents(16, "position_changed");
 
         /// <summary>
-        /// This event is fired for a rightclick on the marker.
+        ///   This event is fired for a rightclick on the marker.
         /// </summary>
-        RightClick,
+        public static readonly MarkerEvents RightClick = new MarkerEvents(17, "rightclick");
 
         /// <summary>
-        /// This event is fired when the marker's shadow property changes.
+        ///   This event is fired when the marker's shadow property changes.
         /// </summary>
-        Shadow_Changed,
+        public static readonly MarkerEvents ShadowChanged = new MarkerEvents(18, "shadow_changed");
 
         /// <summary>
-        /// This event is fired when the marker's shape property changes.
+        ///   This event is fired when the marker's shape property changes.
         /// </summary>
-        Shape_Changed,
+        public static readonly MarkerEvents ShapeChanged = new MarkerEvents(19, "shape_changed");
 
         /// <summary>
-        /// This event is fired when the marker title property changes.
+        ///   This event is fired when the marker title property changes.
         /// </summary>
-        Title_Changed,
+        public static readonly MarkerEvents TitleChanged = new MarkerEvents(20, "title_changed");
 
         /// <summary>
-        /// This event is fired when the marker's visible property changes.
+        ///   This event is fired when the marker's visible property changes.
         /// </summary>
-        Visible_Changed,
+        public static readonly MarkerEvents VisibleChanged = new MarkerEvents(21, "visible_changed");
 
         /// <summary>
-        /// This event is fired when the marker's zIndex property changes.
+        ///   This event is fired when the marker's zIndex property changes.
         /// </summary>
-        ZIndex_Changed
+        public static readonly MarkerEvents ZIndexChanged = new MarkerEvents(22, "zindex_changed");
+
+        private MarkerEvents(int value, string name) : base(value, name)
+        {
+        }
     }
 }

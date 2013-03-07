@@ -12,7 +12,9 @@ namespace Subgurim.Maps.Google
         private string mapId;
         private BaseMapObject anchor;
 
-        private InfoWindowEvents _sourceEvent = InfoWindowEvents.CloseClick;
+        private MarkerEvents _markerEvent = MarkerEvents.Click;
+        private PolygonEvents _polygonEvent = PolygonEvents.Click;
+        private PolylineEvents _polylineEvent = PolylineEvents.Click;
 
         #region Constructor
 
@@ -84,9 +86,19 @@ namespace Subgurim.Maps.Google
             this.mapId = map;
         }
 
-        public void SetEvent(InfoWindowEvents sourceEvent)
+        public void SetAnchorEvent(MarkerEvents anchorEvent)
         {
-            this._sourceEvent = sourceEvent;
+            this._markerEvent = anchorEvent;
+        }
+
+        public void SetAnchorEvent(PolygonEvents polygonEvent)
+        {
+            this._polygonEvent = polygonEvent;
+        }
+
+        public void SetAnchorEvent(PolylineEvents polylineEvent)
+        {
+            this._polylineEvent = polylineEvent;
         }
 
         #endregion
@@ -133,12 +145,12 @@ namespace Subgurim.Maps.Google
                     if (!KeepOpenWindows)
                     {
                         sb.AppendFormat("google.maps.event.addListener({0},'{1}',function(){{closeWindows('{3}');{2}.open({3},{0});}});",
-                                        marker.Id, _sourceEvent.ToString("F"), Id, mapId);
+                                        marker.Id, _markerEvent, Id, mapId);
                     }
                     else
                     {
                         sb.AppendFormat("google.maps.event.addListener({0},'{1}',function(){{{2}.open({3},{0});}});",
-                                        marker.Id, _sourceEvent.ToString("F"), Id, mapId);
+                                        marker.Id, _markerEvent, Id, mapId);
                     }
 
                     if (OpenOnLoad)
@@ -178,12 +190,12 @@ namespace Subgurim.Maps.Google
                     if (!KeepOpenWindows)
                     {
                         sb.AppendFormat("google.maps.event.addListener({0},'{1}',function(){{closeWindows('{3}');{2}.open({3});}});",
-                                        polygon.Id, _sourceEvent.ToString("F"), Id, mapId);
+                                        polygon.Id, _polygonEvent, Id, mapId);
                     }
                     else
                     {
                         sb.AppendFormat("google.maps.event.addListener({0},'{1}',function(){{{2}.open({3});}});",
-                                        polygon.Id, _sourceEvent.ToString("F"), Id, mapId);
+                                        polygon.Id, _polygonEvent, Id, mapId);
                     }
 
                     if (OpenOnLoad)
@@ -224,13 +236,13 @@ namespace Subgurim.Maps.Google
                     {
                         sb.AppendFormat(
                             "google.maps.event.addListener({0},'{1}',function(){{closeWindows('{3}');{2}.open({3});}});",
-                            polyline.Id, _sourceEvent.ToString("F"), Id, mapId);
+                            polyline.Id, _polylineEvent, Id, mapId);
                     }
                     else
                     {
                         sb.AppendFormat(
                             "google.maps.event.addListener({0},'{1}',function(){{{2}.open({3});}});",
-                            polyline.Id, _sourceEvent.ToString("F"), Id, mapId);
+                            polyline.Id, _polylineEvent, Id, mapId);
                     }
 
                     if (OpenOnLoad)

@@ -1,45 +1,53 @@
-﻿namespace Subgurim.Maps.Google.Events
+﻿using System;
+using Subgurim.Maps.Helpers;
+
+namespace Subgurim.Maps.Google.Events
 {
-    internal enum PolygonEvents
+    [Serializable]
+    internal sealed class PolygonEvents : StringEnum
     {
         /// <summary>
-        /// This event is fired when the DOM click event is fired on the Polygon.
+        ///   This event is fired when the DOM click event is fired on the Polygon.
         /// </summary>
-        Click,
+        public static readonly PolygonEvents Click = new PolygonEvents(1, "click");
 
         /// <summary>
-        /// This event is fired when the DOM dblclick event is fired on the Polygon.
+        ///   This event is fired when the DOM dblclick event is fired on the Polygon.
         /// </summary>
-        DblClick,
+        public static readonly PolygonEvents DblClick = new PolygonEvents(2, "dblclick");
 
         /// <summary>
-        /// This event is fired when the DOM mousedown event is fired on the Polygon.
+        ///   This event is fired when the DOM mousedown event is fired on the Polygon.
         /// </summary>
-        MouseDown,
+        public static readonly PolygonEvents MouseDown = new PolygonEvents(3, "mousedown");
 
         /// <summary>
-        /// This event is fired when the DOM mousemove event is fired on the Polygon.
+        ///   This event is fired when the DOM mousemove event is fired on the Polygon.
         /// </summary>
-        MouseMove,
+        public static readonly PolygonEvents MouseMove = new PolygonEvents(4, "mousemove");
 
         /// <summary>
-        /// This event is fired on Polygon mouseout.
+        ///   This event is fired on Polygon mouseout.
         /// </summary>
-        MouseOut,
+        public static readonly PolygonEvents MouseOut = new PolygonEvents(5, "mouseout");
 
         /// <summary>
-        /// This event is fired on Polygon mouseover.
+        ///   This event is fired on Polygon mouseover.
         /// </summary>
-        MouseOver,
+        public static readonly PolygonEvents MouseOver = new PolygonEvents(6, "mouseover");
 
         /// <summary>
-        /// This event is fired when the DOM mouseup event is fired on the Polygon.
+        ///   This event is fired when the DOM mouseup event is fired on the Polygon.
         /// </summary>
-        MouseUp,
+        public static readonly PolygonEvents MouseUp = new PolygonEvents(7, "mouseup");
 
         /// <summary>
-        /// This event is fired when the Polygon is right-clicked on.
+        ///   This event is fired when the Polygon is right-clicked on.
         /// </summary>
-        RightClick,
+        public static readonly PolygonEvents RightClick = new PolygonEvents(8, "rightclick");
+
+        private PolygonEvents(int value, string name) : base(value, name)
+        {
+        }
     }
 }

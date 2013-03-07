@@ -1,14 +1,23 @@
+using System;
+using Subgurim.Maps.Helpers;
+
 namespace Subgurim.Maps.Google.Events
 {
-    internal enum GroundOverlayEvents
+    [Serializable]
+    internal sealed class GroundOverlayEvents : StringEnum
     {
         /// <summary>
-        /// This event is fired when the DOM click event is fired on the GroundOverlay.
+        ///   This event is fired when the DOM click event is fired on the GroundOverlay.
         /// </summary>
-        Click,		
+        public static readonly GroundOverlayEvents Click = new GroundOverlayEvents(1, "click");
+
         /// <summary>
-        /// This event is fired when the DOM dblclick event is fired on the GroundOverlay.
+        ///   This event is fired when the DOM dblclick event is fired on the GroundOverlay.
         /// </summary>
-        DblClick		
+        public static readonly GroundOverlayEvents DblClick = new GroundOverlayEvents(2, "dblclick");
+
+        private GroundOverlayEvents(int value, string name) : base(value, name)
+        {
+        }
     }
 }

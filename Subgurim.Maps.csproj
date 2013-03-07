@@ -100,6 +100,7 @@
     <Compile Include="Google\Point.cs" />
     <Compile Include="Google\Polygon.cs" />
     <Compile Include="Google\Polyline.cs" />
+    <Compile Include="Helpers\StringEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Google\Rectangle.cs" />
     <Compile Include="Google\Size.cs" />
