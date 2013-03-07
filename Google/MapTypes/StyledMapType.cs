@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Text;
-using Subgurim.Maps.Collections;
 using Subgurim.Maps.Google.Abstract;
 
 namespace Subgurim.Maps.Google.MapTypes
 {
+    [Serializable]
     internal class StyledMapType : BaseMapObject<StyledMapOptions>
     {
         private readonly List<MapTypeStyle> _styles = new List<MapTypeStyle>();
@@ -18,11 +19,11 @@ namespace Subgurim.Maps.Google.MapTypes
             Options = styledMapOptions;
         }
 
-        public StyledMapType(IEnumerable<MapTypeStyle> styles) : this(styles, new StyledMapOptions())
+        public StyledMapType(IEnumerable<MapTypeStyle> styles) : this(new StyledMapOptions(), styles)
         {
         }
 
-        public StyledMapType(IEnumerable<MapTypeStyle> styles, StyledMapOptions styledMapOptions)
+        public StyledMapType(StyledMapOptions styledMapOptions, IEnumerable<MapTypeStyle> styles)
         {
             _styles.AddRange(styles);
             Options = styledMapOptions;
@@ -37,7 +38,7 @@ namespace Subgurim.Maps.Google.MapTypes
         {
             var sb = new StringBuilder();
 
-            var styles = GetStyles();
+            var styles = MapTypeStyle.GetStyles(_styles);
 
             if (string.IsNullOrEmpty(styles))
             {
@@ -51,21 +52,9 @@ namespace Subgurim.Maps.Google.MapTypes
                 options = "{}";
             }
 
-            sb.AppendFormat("var {0}=new google.maps.StyledMapType(styles:{1}, options:{2});", Id, styles, options);
+            sb.AppendFormat("var {0}=new google.maps.StyledMapType({1}, {2});", Id, styles, options);
 
             return sb.ToString();
-        }
-
-        private string GetStyles()
-        {
-            var options = new JsArrayCollection();
-
-            foreach (var style in _styles)
-            {
-                options.Add(style.ToString());
-            }
-
-            return options.ToString();
         }
     }
 }

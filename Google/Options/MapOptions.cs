@@ -39,6 +39,7 @@ namespace Subgurim.Maps.Google.Options
         public bool? MapTypeControl { get; set; }
         public MapTypeControlOptions MapTypeControlOptions { get; set; }
         public MapTypeIds? MapTypeId { get; set; }
+        public string CustomMapTypeId { get; set; }
         public int? MaxZoom { get; set; }
         public int? MinZoom { get; set; }
         public bool NoClear { get; set; }
@@ -119,7 +120,16 @@ namespace Subgurim.Maps.Google.Options
                 optionList.Add<bool>("mapTypeControl", MapTypeControl.Value);
             }
             optionList.Add("mapTypeControlOptions", MapTypeControlOptions, MapTypeControlOptions != null);
-            optionList.Add("mapTypeId", GetMapType(MapTypeId));
+
+            if (string.IsNullOrEmpty(CustomMapTypeId))
+            {
+                optionList.Add("mapTypeId", GetMapType(MapTypeId));
+            }
+            else
+            {
+                optionList.Add<string>("mapTypeId", CustomMapTypeId);
+            }
+
             optionList.Add("maxZoom", MaxZoom, MaxZoom.HasValue);
             optionList.Add("minZoom", MinZoom, MinZoom.HasValue);
             optionList.Add("noClear", NoClear, NoClear != DefaultNoClear, typeof(bool));
@@ -135,7 +145,10 @@ namespace Subgurim.Maps.Google.Options
             optionList.Add("streetView", StreetView != null, StreetView != null, typeof(bool));
             optionList.Add("streetViewControl", StreetViewControl, StreetViewControl != DefaultStreetViewControl, typeof(bool));
             optionList.Add("streetViewControlOptions", StreetViewControlOptions, StreetViewControlOptions != null);
-            optionList.Add("styles", Styles, Styles.Count > 0, typeof(bool)); // TODO
+            if (Styles.Count > 0)
+            {
+                optionList.Add("styles", MapTypeStyle.GetStyles(Styles));
+            }
             optionList.Add("tilt", Tilt, Tilt.HasValue);
             optionList.Add("zoom", Zoom, Zoom.HasValue, typeof(int));
             optionList.Add("zoomControl", ZoomControl, ZoomControl != DefaultZoomControl, typeof(bool));

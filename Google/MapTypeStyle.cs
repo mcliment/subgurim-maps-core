@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using Subgurim.Maps.Collections;
 using Subgurim.Maps.Google.Enums;
 
 namespace Subgurim.Maps.Google
 {
+    [Serializable]
     internal class MapTypeStyle
     {
         public MapTypeStyleElementType ElementType { get; set; }
@@ -19,6 +21,18 @@ namespace Subgurim.Maps.Google
             options.Add<string>("elementType", GetElementType());
             options.Add<string>("featureType", GetFeatureType());
             options.Add("stylers", Styler.ToString());
+
+            return options.ToString();
+        }
+
+        internal static string GetStyles(IEnumerable<MapTypeStyle> styles)
+        {
+            var options = new JsArrayCollection();
+
+            foreach (var style in styles)
+            {
+                options.Add(style.ToString());
+            }
 
             return options.ToString();
         }

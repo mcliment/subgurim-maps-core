@@ -9,6 +9,7 @@ namespace Subgurim.Maps.Google
     /// <summary>
     /// A styler affects how a map's elements will be styled.
     /// </summary>
+    [Serializable]
     internal class MapTypeStyler
     {
         /// <summary>
@@ -53,7 +54,7 @@ namespace Subgurim.Maps.Google
 
         public override string ToString()
         {
-            var values = new AdvancedCollection("[", "]", ",", ":");
+            var values = new AdvancedCollection("{", "}", "},{", ":");
 
             values.Add<double>("gamma", Gamma, Gamma.HasValue);
             values.Add<bool>("invert_lightness", InvertLightness, InvertLightness.HasValue);
@@ -76,7 +77,7 @@ namespace Subgurim.Maps.Google
                 values.Add<string>("visibility", Visibility.Value.ToString().ToLowerInvariant());
             }
 
-            return values.ToString();
+            return "[" + values.ToString() + "]";
         }
     }
 }

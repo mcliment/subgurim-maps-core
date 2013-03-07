@@ -1,8 +1,10 @@
+using System;
 using Subgurim.Maps.Collections;
 using Subgurim.Maps.Google.Abstract;
 
 namespace Subgurim.Maps.Google.MapTypes
 {
+    [Serializable]
     internal class StyledMapOptions : BaseOptions
     {
         /// <summary>

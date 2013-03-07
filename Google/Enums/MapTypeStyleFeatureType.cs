@@ -1,6 +1,6 @@
 namespace Subgurim.Maps.Google.Enums
 {
-    public enum MapTypeStyleFeatureType
+    internal enum MapTypeStyleFeatureType
     {
         /// <summary>
         /// Apply the rule to administrative areas.
@@ -13,11 +13,11 @@ namespace Subgurim.Maps.Google.Enums
         /// <summary>
         /// Apply the rule to land parcels.
         /// </summary>
-        Aadministrative__Land_Parcel,
+        Administrative__Land_Parcel,
         /// <summary>
         /// Apply the rule to localities.
         /// </summary>
-        Aadministrative__Locality,
+        Administrative__Locality,
         /// <summary>
         /// Apply the rule to neighborhoods.
         /// </summary>
