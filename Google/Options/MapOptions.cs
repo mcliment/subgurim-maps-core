@@ -135,7 +135,7 @@ namespace Subgurim.Maps.Google.Options
             optionList.Add("streetView", StreetView != null, StreetView != null, typeof(bool));
             optionList.Add("streetViewControl", StreetViewControl, StreetViewControl != DefaultStreetViewControl, typeof(bool));
             optionList.Add("streetViewControlOptions", StreetViewControlOptions, StreetViewControlOptions != null);
-            optionList.Add("styles", Styles, Styles.Count > 0, typeof(bool));
+            optionList.Add("styles", Styles, Styles.Count > 0, typeof(bool)); // TODO
             optionList.Add("tilt", Tilt, Tilt.HasValue);
             optionList.Add("zoom", Zoom, Zoom.HasValue, typeof(int));
             optionList.Add("zoomControl", ZoomControl, ZoomControl != DefaultZoomControl, typeof(bool));

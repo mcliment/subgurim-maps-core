@@ -60,6 +60,11 @@
     <Compile Include="Google\Events\StreetViewPanoramaEvents.cs" />
     <Compile Include="Google\GeoCoder.cs" />
     <Compile Include="Google\GroundOverlay.cs" />
+    <Compile Include="Google\Enums\MapTypeStyleElementType.cs" />
+    <Compile Include="Google\Enums\MapTypeStyleFeatureType.cs" />
+    <Compile Include="Google\Enums\MapTypeStylerVisibility.cs" />
+    <Compile Include="Google\MapTypes\StyledMapOptions.cs" />
+    <Compile Include="Google\MapTypes\StyledMapType.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\JavascriptHelper.cs" />
     <Compile Include="Helpers\MapHelper.cs" />

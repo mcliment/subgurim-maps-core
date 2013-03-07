@@ -1,54 +1,36 @@
 ﻿using System.Collections.Generic;
+using Subgurim.Maps.Collections;
+using Subgurim.Maps.Google.Enums;
 
 namespace Subgurim.Maps.Google
 {
     internal class MapTypeStyle
     {
-        public enum MapTypeStyleElementType
-        {
-            All,
-            Geometry,
-            Labels
-        }
-
-        public enum MapTypeStyleFeatureType
-        {
-            Administrative,
-            Administrative__Country,
-            Aadministrative__Land_Parcel,
-            Aadministrative__Locality,
-            Administrative__Neighborhood,
-            Aministrative__Province,
-            All,
-            Landscape,
-            Landscape__Man_Made,
-            Landscape__Natural,
-            Poi,
-            Poi__Attraction,
-            Poi__Business,
-            Poi__Government,
-            Poi__Medical,
-            Poi__Park,
-            Poi__Place_Of_Worship,
-            Poi__School,
-            Poi__Sports_Complex,
-            Road,
-            Road__Arterial,
-            Road__Highway,
-            Road__Local,
-            Transit,
-            Transit__Line,
-            Transit__Station,
-            Transit__Station__Airport,
-            Transit__Station__Bus,
-            Transit__Station__Rail,
-            Water
-        }
-
         public MapTypeStyleElementType ElementType { get; set; }
 
         public MapTypeStyleFeatureType FeatureType { get; set; }
 
-        public IList<MapTypeStyler> Stylers { get; set; }
+        public MapTypeStyler Styler { get; set; }
+
+        public override string ToString()
+        {
+            var options = new JsonCollection(false);
+
+            options.Add<string>("elementType", GetElementType());
+            options.Add<string>("featureType", GetFeatureType());
+            options.Add("stylers", Styler.ToString());
+
+            return options.ToString();
+        }
+
+        private string GetElementType()
+        {
+            return ElementType.ToString().ToLowerInvariant().Replace("__", ".");
+        }
+
+        private string GetFeatureType()
+        {
+            return FeatureType.ToString().ToLowerInvariant().Replace("__", ".");
+        }
     }
 }
