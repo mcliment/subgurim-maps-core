@@ -2,6 +2,7 @@
 {
     internal enum MapTypeIds
     {
+        Default = 0,
         /// <summary>
         /// This map type displays a transparent layer of major streets on satellite images.
         /// </summary>

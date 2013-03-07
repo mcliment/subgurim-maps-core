@@ -112,13 +112,14 @@ namespace Subgurim.Maps.Google.Options
             optionList.Add("draggingCursor", DraggingCursor, DraggingCursor != Cursor.None, typeof(string));
             optionList.Add("heading", Heading, Heading.HasValue);
             optionList.Add("keyboardShortcuts", KeyboardShortcuts, DisableDefaultUI || KeyboardShortcuts != DefaultKeyboardShortcuts, typeof(bool));
+            // TODO :: MapMaker
+            // optionList.Add("mapMaker", MapMaker, MapMaker != DefaultMapMaker, typeof(bool));
             if (MapTypeControl.HasValue)
             {
                 optionList.Add<bool>("mapTypeControl", MapTypeControl.Value);
             }
             optionList.Add("mapTypeControlOptions", MapTypeControlOptions, MapTypeControlOptions != null);
-            // TODO :: Pick maptypeId
-            //optionList.Add("mapTypeId", GGenericType.GetMapType(mapType, MapTypeId));
+            optionList.Add("mapTypeId", GetMapType(MapTypeId));
             optionList.Add("maxZoom", MaxZoom, MaxZoom.HasValue);
             optionList.Add("minZoom", MinZoom, MinZoom.HasValue);
             optionList.Add("noClear", NoClear, NoClear != DefaultNoClear, typeof(bool));
@@ -141,6 +142,27 @@ namespace Subgurim.Maps.Google.Options
             optionList.Add("zoomControlOptions", ZoomControlOptions, ZoomControlOptions != null);
 
             return optionList;
+        }
+
+        // TODO :: "G_MAPMAKER_NORMAL_MAP", "G_MAPMAKER_HYBRID_MAP" - MapMaker tiles not implemented v3
+        internal static string GetMapType(MapTypeIds? ids)
+        {
+            if (ids.HasValue)
+            {
+                switch (ids.Value)
+                {
+                    case MapTypeIds.Hybrid:
+                        return "google.maps.MapTypeId.HYBRID";
+                    case MapTypeIds.Roadmap:
+                        return "google.maps.MapTypeId.ROADMAP";
+                    case MapTypeIds.Satellite:
+                        return "google.maps.MapTypeId.SATELLITE";
+                    case MapTypeIds.Terrain:
+                        return "google.maps.MapTypeId.TERRAIN";
+                }
+            }
+
+            return "google.maps.MapTypeId.ROADMAP";
         }
     }
 }
