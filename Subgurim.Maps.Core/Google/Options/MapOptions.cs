@@ -104,8 +104,8 @@ namespace Subgurim.Maps.Core.Google.Options
             optionList.Add("disableDefaultUI", DisableDefaultUI, DisableDefaultUI != DefaultDisableDefaultUi, typeof(bool));
             optionList.Add("disableDoubleClickZoom", DisableDoubleClickZoom, DisableDoubleClickZoom != DefaultDisableDoubleClickZoom, typeof(bool));
             optionList.Add("draggable", Draggable, Draggable != DefaultDraggable, typeof(bool));
-            optionList.Add("draggableCursor", DraggableCursor, DraggableCursor != Cursor.None, typeof(string));
-            optionList.Add("draggingCursor", DraggingCursor, DraggingCursor != Cursor.None, typeof(string));
+            optionList.Add("draggableCursor", DraggableCursor.ToString().ToLowerInvariant(), DraggableCursor != Cursor.None, typeof(string));
+            optionList.Add("draggingCursor", DraggingCursor.ToString().ToLowerInvariant(), DraggingCursor != Cursor.None, typeof(string));
             optionList.Add("heading", Heading, Heading.HasValue);
             optionList.Add("keyboardShortcuts", KeyboardShortcuts, DisableDefaultUI || KeyboardShortcuts != DefaultKeyboardShortcuts, typeof(bool));
             // TODO :: MapMaker

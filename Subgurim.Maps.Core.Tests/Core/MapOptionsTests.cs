@@ -21,7 +21,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         [Test]
         public void Empty_Options_Render_Empty_String()
         {
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.BackgroundColor = Color.Red;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{backgroundColor:'#FF0000',mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{backgroundColor:'#FF0000',mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{center:new google.maps.LatLng(45,23),mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                            ",{center:new google.maps.LatLng(45,23),mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{disableDefaultUI:true,keyboardShortcuts:true,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                            ",{disableDefaultUI:true,keyboardShortcuts:true,mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.DisableDoubleClickZoom = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{disableDoubleClickZoom:true,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{disableDoubleClickZoom:true,mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.Draggable = false;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{draggable:false,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{draggable:false,mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -77,7 +77,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.DraggableCursor = Cursor.Crosshair;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{draggableCursor:'crosshair',mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{draggableCursor:'crosshair',mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.DraggingCursor = Cursor.Crosshair;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{draggingCursor:'crosshair',mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{draggingCursor:'crosshair',mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         {
             options.Heading = 45;
 
-            Assert.That(options.ToString(), Is.EqualTo(",{heading:45,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{heading:45,mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -103,7 +103,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.KeyboardShortcuts = false;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{keyboardShortcuts:false,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{keyboardShortcuts:false,mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -112,18 +112,17 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.MapTypeControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeControl:true,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:true,mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
         public void MapTypeControlOptions_Renders_Option()
         {
-            //options.MapTypeControlOptions = new MapTypeControlOptions(typeof (GMapType))
-            //                                    {Position = ControlPosition.Bottom_Left};
+            options.MapTypeControlOptions = new MapTypeControlOptions(typeof(Map)) { Position = ControlPosition.Bottom_Left };
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},mapTypeId:google.maps.MapTypeId.ROADMAP}"));
         }
 
         [Test]
@@ -131,7 +130,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         {
             options.MapTypeId = MapTypeIds.Satellite;
 
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.SATELLITE,zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.SATELLITE}"));
         }
 
         [Test]
@@ -141,7 +140,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.MinZoom = 3;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,maxZoom:7,minZoom:3,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,maxZoom:7,minZoom:3}"));
         }
 
         [Test]
@@ -149,7 +148,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         {
             options.NoClear = true;
 
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,noClear:true,zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,noClear:true}"));
         }
 
         [Test]
@@ -158,7 +157,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.OverviewMapControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,overviewMapControl:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,overviewMapControl:true}"));
         }
 
         [Test]
@@ -168,7 +167,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,overviewMapControlOptions:{opened:true},zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,overviewMapControlOptions:{opened:true}}"));
         }
 
         [Test]
@@ -177,7 +176,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.PanControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,panControl:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,panControl:true}"));
         }
 
         [Test]
@@ -187,7 +186,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,panControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,panControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT}}"));
         }
 
         [Test]
@@ -196,7 +195,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.RotateControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,rotateControl:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,rotateControl:true}"));
         }
 
         [Test]
@@ -206,7 +205,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,rotateControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,rotateControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT}}"));
         }
 
         [Test]
@@ -215,17 +214,17 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.ScaleControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,scaleControl:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,scaleControl:true}"));
         }
 
         [Test]
         public void ScaleControlOptions_Renders_Option()
         {
-            options.ScaleControlOptions = new ScaleControlOptions() {Position = ControlPosition.Bottom_Left};
+            options.ScaleControlOptions = new ScaleControlOptions() {Position = ControlPosition.Bottom_Right};
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,scaleControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,scaleControlOptions:{position:google.maps.ControlPosition.BOTTOM_RIGHT}}"));
         }
 
         [Test]
@@ -234,7 +233,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.Scrollwheel = false;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,scrollwheel:false,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,scrollwheel:false}"));
         }
 
         [Test]
@@ -243,7 +242,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.StreetView = new StreetViewPanorama("map", new StreetViewPanoramaOptions());
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,streetView:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,streetView:true}"));
         }
 
         [Test]
@@ -252,7 +251,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.StreetViewControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,streetViewControl:true,zoom:0}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,streetViewControl:true}"));
         }
 
         [Test]
@@ -262,7 +261,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,streetViewControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT},zoom:0}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,streetViewControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT}}"));
         }
 
         [Test]
@@ -278,7 +277,7 @@ namespace Subgurim.Maps.Core.Tests.Core
                                          }
                                  };
 
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,styles:{},zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,styles:[{elementType:'all',featureType:'all',stylers:[{color:'#00FFFF'}]}]}"));
         }
 
         [Test]
@@ -286,7 +285,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         {
             options.Tilt = 45;
 
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,tilt:45,zoom:0}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,tilt:45}"));
         }
 
         [Test]
@@ -294,7 +293,7 @@ namespace Subgurim.Maps.Core.Tests.Core
         {
             options.Zoom = 7;
 
-            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:7}"));
+            Assert.That(options.ToString(), Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:7}"));
         }
 
         [Test]
@@ -303,7 +302,7 @@ namespace Subgurim.Maps.Core.Tests.Core
             options.ZoomControl = true;
 
             Assert.That(options.ToString(),
-                        Is.EqualTo(",{mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0,zoomControl:true}"));
+                        Is.EqualTo(",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,zoomControl:true}"));
         }
 
         [Test]
@@ -313,7 +312,7 @@ namespace Subgurim.Maps.Core.Tests.Core
 
             Assert.That(options.ToString(),
                         Is.EqualTo(
-                            ",{mapTypeId:google.maps.MapTypeId.ROADMAP,zoom:0,zoomControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT}}"));
+                            ",{mapTypeControl:false,mapTypeId:google.maps.MapTypeId.ROADMAP,zoomControlOptions:{position:google.maps.ControlPosition.BOTTOM_LEFT}}"));
         }
     }
 }

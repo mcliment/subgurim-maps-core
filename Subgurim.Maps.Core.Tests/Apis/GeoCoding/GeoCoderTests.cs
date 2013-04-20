@@ -13,7 +13,7 @@ namespace Subgurim.Maps.Core.Tests.Apis.GeoCoding
 
             var result = geoCoder.Request("Spain");
 
-            Assert.That(result, Is.Not.Empty);
+            Assert.That(result, Is.Not.Null);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Subgurim.Maps.Core.Google.Options
 
             if (Position.HasValue)
             {
-                options.Add("position", "google.maps.ControlPosition." + Position.Value.ToString().ToLowerInvariant(), Position.Value != ControlPosition.Top_Left);
+                options.Add("position", "google.maps.ControlPosition." + Position.Value.ToString().ToUpperInvariant(), Position.Value != ControlPosition.Top_Left);
             }
 
             return options.ToString();

@@ -47,7 +47,7 @@ namespace Subgurim.Maps.Core.Google.Options
             options.Add("style", "google.maps.MapTypeControlStyle." + Enum.GetName(typeof(MapTypeControlStyle), Style).ToUpperInvariant(), Style != MapTypeControlStyle.Default);
 
             // TODO :: Review MapType
-            if ((mapType == typeof(Map) || mapType.Name == "GMap") && MapTypeIds.Count > 0)
+            if ((mapType == typeof(Map) || mapType.Name == "GMap") && MapTypeIds != null && MapTypeIds.Count > 0)
             {
                 var types = new JsArrayCollection();
 
