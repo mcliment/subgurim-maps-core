@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Enums;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Enums;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class MapTypeControlOptions
+    public class MapTypeControlOptions
     {
         private Type mapType;
 

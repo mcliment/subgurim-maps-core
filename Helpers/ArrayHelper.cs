@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using Subgurim.Maps.Google;
+using Subgurim.Maps.Core.Google;
 
-namespace Subgurim.Maps.Helpers
+namespace Subgurim.Maps.Core.Helpers
 {
     public class ArrayHelper
     {

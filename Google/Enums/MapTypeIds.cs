@@ -1,6 +1,6 @@
-﻿namespace Subgurim.Maps.Google.Enums
+﻿namespace Subgurim.Maps.Core.Google.Enums
 {
-    internal enum MapTypeIds
+    public enum MapTypeIds
     {
         Default = 0,
         /// <summary>

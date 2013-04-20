@@ -1,6 +1,6 @@
 using System;
 
-namespace Subgurim.Maps.Google.Utilities
+namespace Subgurim.Maps.Core.Google.Utilities
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     internal sealed class JavascriptResourceAttribute : Attribute

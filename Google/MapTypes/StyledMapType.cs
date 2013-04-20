@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Subgurim.Maps.Google.Abstract;
+using Subgurim.Maps.Core.Google.Abstract;
 
-namespace Subgurim.Maps.Google.MapTypes
+namespace Subgurim.Maps.Core.Google.MapTypes
 {
     [Serializable]
-    internal class StyledMapType : BaseMapObject<StyledMapOptions>
+    public class StyledMapType : BaseMapObject<StyledMapOptions>
     {
         private readonly List<MapTypeStyle> _styles = new List<MapTypeStyle>();
 

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C72D447F-C573-4E0C-8728-17534FEF86AD}</ProjectGuid>
+    <ProjectGuid>{2A35CD9A-DE6E-4FAB-A1F4-0E9C287B5175}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Subgurim.Maps</RootNamespace>
-    <AssemblyName>Subgurim.Maps</AssemblyName>
+    <RootNamespace>Subgurim.Maps.Core</RootNamespace>
+    <AssemblyName>Subgurim.Maps.Core</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

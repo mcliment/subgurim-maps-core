@@ -1,9 +1,9 @@
 using System;
 using System.Text;
-using Subgurim.Maps.Google.Abstract;
-using Subgurim.Maps.Google.Options;
+using Subgurim.Maps.Core.Google.Abstract;
+using Subgurim.Maps.Core.Google.Options;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     [Serializable]
     internal class Marker : BaseMapObject<MarkerOptions>

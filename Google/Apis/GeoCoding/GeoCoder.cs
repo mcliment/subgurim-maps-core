@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Net;
-using Subgurim.Maps.Collections;
+using Subgurim.Maps.Core.Collections;
 
-namespace Subgurim.Maps.Google.Apis.GeoCoding
+namespace Subgurim.Maps.Core.Google.Apis.GeoCoding
 {
     public class GeoCoder
     {

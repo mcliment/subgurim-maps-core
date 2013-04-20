@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Specialized;
 using System.Text;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Collections
+namespace Subgurim.Maps.Core.Collections
 {
     public class AdvancedCollection
     {

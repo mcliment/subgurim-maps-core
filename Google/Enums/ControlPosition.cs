@@ -1,9 +1,9 @@
-﻿namespace Subgurim.Maps.Google.Enums
+﻿namespace Subgurim.Maps.Core.Google.Enums
 {
     /// <summary>
     /// Identifiers used to specify the placement of controls on the map. Controls are positioned relative to other controls in the same layout position. Controls that are added first are positioned closer to the edge of the map. 
     /// </summary>
-    internal enum ControlPosition
+    public enum ControlPosition
     {
         /// <summary>
         /// Elements are positioned in the center of the bottom row.

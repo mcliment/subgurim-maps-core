@@ -1,9 +1,9 @@
-﻿using Subgurim.Maps.Google.Abstract;
-using Subgurim.Maps.Google.Options;
+﻿using Subgurim.Maps.Core.Google.Abstract;
+using Subgurim.Maps.Core.Google.Options;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
-    internal class StreetViewPanorama : BaseMapObject<StreetViewPanoramaOptions>
+    public class StreetViewPanorama : BaseMapObject<StreetViewPanoramaOptions>
     {
         private readonly string container;
 

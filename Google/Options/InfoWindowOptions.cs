@@ -1,8 +1,8 @@
 ﻿using System;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Abstract;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Abstract;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
     [Serializable]
     internal class InfoWindowOptions : BaseOptions

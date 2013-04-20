@@ -1,10 +1,10 @@
 ﻿using System;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Enums;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Enums;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class ZoomControlOptions
+    public class ZoomControlOptions
     {
         public enum ZoomControlStyle
         {

@@ -1,11 +1,11 @@
 using System;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Abstract;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Abstract;
 
-namespace Subgurim.Maps.Google.MapTypes
+namespace Subgurim.Maps.Core.Google.MapTypes
 {
     [Serializable]
-    internal class StyledMapOptions : BaseOptions
+    public class StyledMapOptions : BaseOptions
     {
         /// <summary>
         /// Text to display when this MapType's button is hovered over in the map type control.

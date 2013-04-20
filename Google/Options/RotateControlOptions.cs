@@ -1,9 +1,9 @@
-﻿using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Enums;
+﻿using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Enums;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class RotateControlOptions
+    public class RotateControlOptions
     {
         public ControlPosition? Position { get; set; }
 

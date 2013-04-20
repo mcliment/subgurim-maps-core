@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Enums;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Enums;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     [Serializable]
-    internal class MapTypeStyle
+    public class MapTypeStyle
     {
         public MapTypeStyleElementType ElementType { get; set; }
 

@@ -1,10 +1,10 @@
 ﻿using System;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google.Abstract
+namespace Subgurim.Maps.Core.Google.Abstract
 {
     [Serializable]
-    internal abstract class BaseMapObject
+    public abstract class BaseMapObject
     {
         private string _id;
         private string _map;
@@ -36,7 +36,7 @@ namespace Subgurim.Maps.Google.Abstract
     }
 
     [Serializable]
-    internal abstract class BaseMapObject<T> : BaseMapObject where T : BaseOptions
+    public abstract class BaseMapObject<T> : BaseMapObject where T : BaseOptions
     {
         private T options;
 

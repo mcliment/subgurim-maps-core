@@ -1,6 +1,6 @@
-﻿using Subgurim.Maps.Google.Abstract;
+﻿using Subgurim.Maps.Core.Google.Abstract;
 
-namespace Subgurim.Maps.Google.Layers
+namespace Subgurim.Maps.Core.Google.Layers
 {
     internal class CloudLayer : BaseMapObject
     {

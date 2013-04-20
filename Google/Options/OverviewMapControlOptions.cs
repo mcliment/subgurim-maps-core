@@ -1,8 +1,8 @@
-﻿using Subgurim.Maps.Collections;
+﻿using Subgurim.Maps.Core.Collections;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class OverviewMapControlOptions
+    public class OverviewMapControlOptions
     {
         public bool Opened { get; set; }
 

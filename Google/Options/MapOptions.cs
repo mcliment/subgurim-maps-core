@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Abstract;
-using Subgurim.Maps.Google.Enums;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Abstract;
+using Subgurim.Maps.Core.Google.Enums;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class MapOptions : BaseOptions
+    public class MapOptions : BaseOptions
     {
         private static readonly Color DefaultBackColor = Color.Empty;
         private const bool DefaultDisableDefaultUi = false;
@@ -24,8 +23,6 @@ namespace Subgurim.Maps.Google.Options
         private const bool DefaultScrollwheel = true;
         private const bool DefaultStreetViewControl = false;
         private const bool DefaultZoomControl = false;
-
-        private Type mapType;
 
         public Color BackgroundColor { get; set; }
         public LatLng Center { get; set; }
@@ -61,10 +58,8 @@ namespace Subgurim.Maps.Google.Options
         public bool ZoomControl { get; set; }
         public ZoomControlOptions ZoomControlOptions { get; set; }
 
-        public MapOptions(Type mapType)
+        public MapOptions()
         {
-            this.mapType = mapType;
-
             DisableDefaultUI = DefaultDisableDefaultUi;
             DisableDoubleClickZoom = DefaultDisableDoubleClickZoom;
             Draggable = DefaultDraggable;

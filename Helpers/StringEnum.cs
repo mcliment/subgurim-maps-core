@@ -1,6 +1,6 @@
 using System;
 
-namespace Subgurim.Maps.Helpers
+namespace Subgurim.Maps.Core.Helpers
 {
     [Serializable]
     public abstract class StringEnum : Object

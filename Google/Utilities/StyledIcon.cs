@@ -1,8 +1,8 @@
 using System;
 using System.Text;
-using Subgurim.Maps.Google.Utilities.Options;
+using Subgurim.Maps.Core.Google.Utilities.Options;
 
-namespace Subgurim.Maps.Google.Utilities
+namespace Subgurim.Maps.Core.Google.Utilities
 {
     internal enum StyledIconType
     {

@@ -1,8 +1,8 @@
-using Subgurim.Maps.Collections;
+using Subgurim.Maps.Core.Collections;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class StreetViewPov
+    public class StreetViewPov
     {
         /// <summary>
         /// The camera heading in degrees relative to true north. True north is 0°, east is 90°, south is 180°, west is 270°.

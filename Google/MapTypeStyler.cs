@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Drawing;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Google.Enums;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Google.Enums;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     /// <summary>
     /// A styler affects how a map's elements will be styled.
     /// </summary>
     [Serializable]
-    internal class MapTypeStyler
+    public class MapTypeStyler
     {
         /// <summary>
         /// Sets the color of the feature. Valid values: An RGB hex string, i.e. '#ff0000'.

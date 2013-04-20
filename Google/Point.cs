@@ -1,7 +1,7 @@
 ﻿using System;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     [Serializable]
     internal class Point

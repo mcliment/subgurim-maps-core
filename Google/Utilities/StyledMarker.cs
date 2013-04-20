@@ -1,7 +1,7 @@
 using System;
-using Subgurim.Maps.Google.Utilities.Options;
+using Subgurim.Maps.Core.Google.Utilities.Options;
 
-namespace Subgurim.Maps.Google.Utilities
+namespace Subgurim.Maps.Core.Google.Utilities
 {
     [JavascriptResource("StyledMarker.min")]
     [Serializable]

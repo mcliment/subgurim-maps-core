@@ -1,7 +1,7 @@
 using System;
-using Subgurim.Maps.Google.Abstract;
+using Subgurim.Maps.Core.Google.Abstract;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     [Serializable]
     internal class MarkerImage : BaseMapObject

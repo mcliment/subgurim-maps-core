@@ -1,7 +1,7 @@
 ﻿using System;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google.Events
+namespace Subgurim.Maps.Core.Google.Events
 {
     [Serializable]
     internal sealed class MarkerEvents : StringEnum

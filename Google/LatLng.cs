@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     [Serializable]
-    internal class LatLng
+    public class LatLng
     {
         private double lat;
         private double lng;

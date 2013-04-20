@@ -1,8 +1,8 @@
-using Subgurim.Maps.Google.Enums;
+using Subgurim.Maps.Core.Google.Enums;
 
-namespace Subgurim.Maps.Google.Options
+namespace Subgurim.Maps.Core.Google.Options
 {
-    internal class StreetViewAddressControlOptions
+    public class StreetViewAddressControlOptions
     {
         public ControlPosition ControlPosition { get; set; }
     }

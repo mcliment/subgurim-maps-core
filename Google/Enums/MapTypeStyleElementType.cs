@@ -1,6 +1,6 @@
-namespace Subgurim.Maps.Google.Enums
+namespace Subgurim.Maps.Core.Google.Enums
 {
-    internal enum MapTypeStyleElementType
+    public enum MapTypeStyleElementType
     {
         /// <summary>
         /// Apply the rule to all elements of the specified feature.

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Subgurim.Maps.Helpers
+namespace Subgurim.Maps.Core.Helpers
 {
     public static class MapHelper
     {

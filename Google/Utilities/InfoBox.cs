@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Subgurim.Maps.Google.Utilities
+namespace Subgurim.Maps.Core.Google.Utilities
 {
     [Serializable]
     [JavascriptResource("infobox_packed")]

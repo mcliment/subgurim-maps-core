@@ -1,6 +1,6 @@
-namespace Subgurim.Maps.Google.Enums
+namespace Subgurim.Maps.Core.Google.Enums
 {
-    internal enum MapTypeStyleFeatureType
+    public enum MapTypeStyleFeatureType
     {
         /// <summary>
         /// Apply the rule to administrative areas.

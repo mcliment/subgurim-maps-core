@@ -1,10 +1,10 @@
 ﻿using System.Text;
-using Subgurim.Maps.Google.Abstract;
-using Subgurim.Maps.Google.Options;
+using Subgurim.Maps.Core.Google.Abstract;
+using Subgurim.Maps.Core.Google.Options;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
-    internal class Map : BaseMapObject<MapOptions>
+    public class Map : BaseMapObject<MapOptions>
     {
         private readonly MapCss _css = new MapCss();
         private string _name;
@@ -33,7 +33,7 @@ namespace Subgurim.Maps.Google
         #region Constructors
 
         public Map()
-            : this(new MapOptions(typeof(Map)))
+            : this(new MapOptions())
         {
         }
 

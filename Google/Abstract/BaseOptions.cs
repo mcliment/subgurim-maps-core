@@ -1,10 +1,10 @@
 using System;
-using Subgurim.Maps.Collections;
+using Subgurim.Maps.Core.Collections;
 
-namespace Subgurim.Maps.Google.Abstract
+namespace Subgurim.Maps.Core.Google.Abstract
 {
     [Serializable]
-    internal abstract class BaseOptions
+    public abstract class BaseOptions
     {
         public override string ToString()
         {

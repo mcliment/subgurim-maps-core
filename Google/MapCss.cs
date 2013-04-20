@@ -1,6 +1,6 @@
-using Subgurim.Maps.Collections;
+using Subgurim.Maps.Core.Collections;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     public class MapCss
     {

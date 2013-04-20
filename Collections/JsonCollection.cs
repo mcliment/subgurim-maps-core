@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Subgurim.Maps.Collections
+namespace Subgurim.Maps.Core.Collections
 {
     /// <summary>
     /// An object collection to be returned as a JSON array

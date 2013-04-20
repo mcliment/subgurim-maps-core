@@ -1,4 +1,4 @@
-﻿namespace Subgurim.Maps.Collections
+﻿namespace Subgurim.Maps.Core.Collections
 {
     public class QueryStringParameterCollection : AdvancedCollection
     {

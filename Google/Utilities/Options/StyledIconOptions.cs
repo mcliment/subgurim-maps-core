@@ -1,8 +1,8 @@
 using System.Drawing;
-using Subgurim.Maps.Collections;
-using Subgurim.Maps.Helpers;
+using Subgurim.Maps.Core.Collections;
+using Subgurim.Maps.Core.Helpers;
 
-namespace Subgurim.Maps.Google.Utilities.Options
+namespace Subgurim.Maps.Core.Google.Utilities.Options
 {
     internal class StyledIconOptions
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Subgurim.Maps.Google
+namespace Subgurim.Maps.Core.Google
 {
     internal class LatLngBounds
     {

@@ -1,6 +1,6 @@
-namespace Subgurim.Maps.Google.Enums
+namespace Subgurim.Maps.Core.Google.Enums
 {
-    internal enum MapTypeStylerVisibility
+    public enum MapTypeStylerVisibility
     {
         On,
         Off,

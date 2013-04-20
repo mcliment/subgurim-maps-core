@@ -1,6 +1,6 @@
-﻿namespace Subgurim.Maps.Google
+﻿namespace Subgurim.Maps.Core.Google
 {
-    internal enum Cursor
+    public enum Cursor
     {
         None,
         Auto,
