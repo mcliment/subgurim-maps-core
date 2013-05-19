@@ -4,7 +4,7 @@ Subgurim GoogleMaps Core
 Description
 -----------
 
-This library contains the core functionality of the (Subgurim Googlemaps ASP.NET Control)[http://en.googlemaps.subgurim.net/] and offers a OOP interface for generating Google Maps API v3 compatible Javascript code.
+This library contains the core functionality of the [Subgurim Googlemaps ASP.NET Control](http://en.googlemaps.subgurim.net/) and offers a OOP interface for generating Google Maps API v3 compatible Javascript code.
 
 Usage
 -----
@@ -19,8 +19,8 @@ Create an issue here on GitHub, send us a message or fork the project and send a
 Contributors
 ------------
 
-Original code by subgurim
-Maps API v3 port by mcliment
+* Original code by subgurim
+* Maps API v3 port by mcliment
 
 Open Source License
 -------------------
